@@ -8,5 +8,5 @@ bto_advanced_USBIR_cmdのPythonラッパー
 
 ## Note
 
-`ir_patterns/`に同梱の赤外線パターンファイルは、NEC RE0201のもの
-
+* `ir_patterns/`に同梱の赤外線パターンファイルは、NEC RE0201のもの
+* わざわざ本体側の機能でタイマーを使う必要は薄い為、タイマーの赤外線パターン送信機能は実装していない。
