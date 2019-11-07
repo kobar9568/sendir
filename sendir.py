@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
 
 import os
+import pathlib
 
-LIGHT_OFF_PATTERN = ('ir_patterns/off.txt')
-LIGHT_MAX_PATTERN = ('ir_patterns/max.txt')
-LIGHT_NIGHTLIGHT_PATTERN = ('ir_patterns/nightlight.txt')
-LIGHT_INCREASE_BRIGHTNESS_PATTERN = ('ir_patterns/increase_brightness.txt')
-LIGHT_DECREASE_BRIGHTNESS_PATTERN = ('ir_patterns/decrease_brightness.txt')
+SCRIPT_DIR = pathlib.Path(__file__).resolve().parent
+
+LIGHT_OFF_PATTERN = (str(SCRIPT_DIR) + '/ir_patterns/off.txt')
+LIGHT_MAX_PATTERN = (str(SCRIPT_DIR) + '/ir_patterns/max.txt')
+LIGHT_NIGHTLIGHT_PATTERN = (str(SCRIPT_DIR) + '/ir_patterns/nightlight.txt')
+LIGHT_INCREASE_BRIGHTNESS_PATTERN = (str(SCRIPT_DIR) + '/ir_patterns/increase_brightness.txt')
+LIGHT_DECREASE_BRIGHTNESS_PATTERN = (str(SCRIPT_DIR) + '/ir_patterns/decrease_brightness.txt')
 
 
 def send_ir(pattern_file_path):
