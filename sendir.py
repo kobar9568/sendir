@@ -9,7 +9,7 @@ LIGHT_OFF_PATTERN = (str(SCRIPT_DIR) + '/ir_patterns/off.txt')
 LIGHT_MAX_PATTERN = (str(SCRIPT_DIR) + '/ir_patterns/max.txt')
 LIGHT_NIGHTLIGHT_PATTERN = (str(SCRIPT_DIR) + '/ir_patterns/nightlight.txt')
 LIGHT_INCREASE_BRIGHTNESS_PATTERN = (str(SCRIPT_DIR) + '/ir_patterns/increase_brightness.txt')
-LIGHT_DECREASE_BRIGHTNESS_PATTERN = (str(SCRIPT_DIR) + '/ir_patterns/decrease_brightness.txt')
+LIGHT_REDUCE_BRIGHTNESS_PATTERN = (str(SCRIPT_DIR) + '/ir_patterns/reduce_brightness.txt')
 
 
 def send_ir(pattern_file_path):
@@ -99,7 +99,7 @@ def send_light_increase():
         return False
 
 
-def send_light_decrease():
+def send_light_reduce():
     """
     照明の輝度を下げる
 
@@ -108,7 +108,7 @@ def send_light_decrease():
     is_succeed : bool
         送信の成功/失敗
     """
-    is_succeed = send_ir(LIGHT_DECREASE_BRIGHTNESS_PATTERN)
+    is_succeed = send_ir(LIGHT_REDUCE_BRIGHTNESS_PATTERN)
     if is_succeed:
         return True
     else:
@@ -129,4 +129,4 @@ if __name__ == '__main__':
     elif sys.argv[1] == 'inc':
         send_light_increase()
     elif sys.argv[1] == 'red':
-        send_light_decrease()
+        send_light_reduce()
