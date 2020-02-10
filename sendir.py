@@ -116,4 +116,17 @@ def send_light_decrease():
 
 
 if __name__ == '__main__':
-    send_light_on()
+    import sys
+
+    if len(sys.argv) < 2:
+        print('useage: send_ir [on | off | nl | inc | red]')
+    elif sys.argv[1] == 'on':
+        send_light_on()
+    elif sys.argv[1] == 'off':
+        send_light_off()
+    elif sys.argv[1] == 'nl':
+        send_light_nightlight()
+    elif sys.argv[1] == 'inc':
+        send_light_increase()
+    elif sys.argv[1] == 'red':
+        send_light_decrease()
