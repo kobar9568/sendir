@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+
+  sendir:
+    build: .
+    container_name: sendir
+    volumes:
+      - ./:/tmp/sendir/
+    devices:
+      - /dev/bus/usb/:/dev/bus/usb/
+    working_dir: /tmp/build_spigot/
+    entrypoint: ["python3", "/tmp/sendir/sendir.py"]
